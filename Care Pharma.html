@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Care Pharma – Your Trusted Online Pharmacy</title>
+  <link rel="stylesheet" href="Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <img src="logo of care pharma.jpg" width="80" height="80" alt="Example Image">
+      <h1>Care Pharma</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Medicines</a>
+        <a href="#">Upload Prescription</a>
+        <a href="#">Contact</a>
+        <a href="#" class="btn-login" onclick="openModal('loginModal')">Login</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <h2>Your Trusted Online Medicine Store</h2>
+        <p>Get genuine medicines delivered to your doorstep in no time. Upload prescriptions, consult doctors, and more.</p>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search for medicines, brands..." />
+          <button type="button">Search</button>
+        </div>
+
+        <a href="#" class="btn-primary">Shop Now</a>
+      </div>
+      <img src="c:\Users\meetp\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\89829755B317D03EA7379C0067E6023C\WhatsApp Image 2025-07-31 at 18.57.10_69cde5f0.jpg" alt="Medicine Delivery" />
+    </div>
+  </section>
+  <section class="features">
+    <div class="container">
+      <h3>Why Choose Care Pharma?</h3>
+      <div class="feature-grid">
+        <div class="feature">
+          <img src="https://t3.ftcdn.net/jpg/00/96/79/08/360_F_96790838_MzcvKtFzbolHgCJ2uZA00yCCzSV0bxOo.jpg" />
+          <h4>Upload Prescription</h4>
+          <p>Seamless and secure prescription upload for quick verification.</p>
+        </div>
+        <div class="feature">
+          <img src="https://static.vecteezy.com/system/resources/previews/023/809/796/non_2x/pill-bottle-icon-design-templates-free-vector.jpg" />
+          <h4>Wide Range of Medicines</h4>
+          <p>Access thousands of OTC and prescribed medicines anytime.</p>
+        </div>
+        <div class="feature">
+          <img src="https://img.icons8.com/fluency/48/fast-cart.png" />
+          <h4>Fast Delivery</h4>
+          <p>Timely delivery to your home, no matter where you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container footer">
+      <p>&copy; 2025 Care Pharma. All rights reserved.</p>
+    </div>
+  </footer>
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login to Care Pharma</h2>
+      <input type="email" placeholder="Email" id="loginEmail">
+      <input type="password" placeholder="Password" id="loginPassword">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a onclick="switchModal('signupModal', 'loginModal')">Sign up</a></p>
+    </div>
+  </div>
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Create an Account</h2>
+      <input type="text" placeholder="Full Name" id="signupName">
+      <input type="email" placeholder="Email" id="signupEmail">
+      <input type="password" placeholder="Password" id="signupPassword">
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a onclick="switchModal('loginModal', 'signupModal')">Log in</a></p>
+    </div>
+  </div>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function switchModal(openId, closeId) {
+      closeModal(closeId);
+      openModal(openId);
+    }
+
+    function login() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      alert(`Logged in as: ${email}`);
+      closeModal('loginModal');
+    }
+
+    function signup() {
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      alert(`Welcome, ${name}!`);
+      closeModal('signupModal');
+    }
+    window.onclick = function (e) {
+      ['loginModal', 'signupModal'].forEach(id => {
+        const modal = document.getElementById(id);
+        if (e.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
